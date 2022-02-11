@@ -76,7 +76,7 @@ variable "cluster_version" {
 variable "node_group_instance_type" {
   type        = string
   description = "Instance type for the node group's instances."
-  default     = "m5.2xlarge"
+  default     = "t3a.large"
 }
 
 variable "node_group_disk_size" {

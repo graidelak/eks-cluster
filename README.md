@@ -51,13 +51,32 @@ The module definition expects a VPC ID and its private subnets as input
 ### PreRequirements
 
 * Terraform v1.0 https://learn.hashicorp.com/tutorials/terraform/install-cli
+* AWS cli https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
 * An AWS account with admin privileges
 
     Create access key
-    Download key file
+
+
 
   
 ## Steps
+
+First we need to configure our AWS credencials for that , we need to run:
+
+```bash
+$ aws configure
+AWS Access Key ID [None]: xxxxxxxxxxxxxxxxx
+AWS Secret Access Key [None]: xxxxxxxxxxxxxx
+Default region name [None]: us-west-1
+```
+
+To validate your aws user , run this command:
+
+```bash
+aws sts get-caller-identity
+```
+
+Once your AWS profile/user is configure , the next step is to install the EKS cluster.
 
 To install the EKS we need to initialize Terraform by running `terraform init`. Terraform will generate a directory named `.terraform` and download each module source declared in `main.tf`. Initialization will pull in any providers required by these modules.
 
